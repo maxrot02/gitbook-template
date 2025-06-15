@@ -5,7 +5,7 @@ github账户
 
 ## 部署方式
 本地填写文档内容+github自动化部署
-main分支---deploy.yml（需要setting-actions-general选择workflow permission选择读和写）---》自动生成gh-pages
+main分支---deploy.yml---》自动生成gh-pages
 分支（pages的内容）---》setting的pages选项选择使用deploy from a branch
 
 ## 本地仓库内容（main）
@@ -16,7 +16,7 @@ my-gitbook/
 ├── SUMMARY.md  
 └── book.json  （可选）  
 
-.github/workflows/deploy.yml：因为在github上自动部署，所以使用了这个文件，把main内容  
+.github/workflows/deploy.yml：因为在github上自动部署，所以使用了这个文件。需要setting-actions-general选择workflow permission选择读和写权限开启（不过后面新仓库里面部署的时候直接使用默认的选项也可以，不知道怎么回事，不管了）  
 doc：写好的文档存放在这里  
 README.md：当成首页内容  
 SUMMARY.md：目录  
