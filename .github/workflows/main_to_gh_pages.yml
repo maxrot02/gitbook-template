@@ -1,0 +1,43 @@
+name: Deploy GitBook to GitHub Pages
+
+on:
+  workflow_dispatch:  # 手动触发
+  push:
+    branches:
+      - main  # 自动触发也保留（可选）
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js for GitBook (Node 10)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '10.x'
+
+      - name: Install GitBook
+        run: |
+          npm install -g gitbook-cli
+          gitbook --version
+
+      - name: Build GitBook
+        run: |
+          gitbook install
+          gitbook build
+          ls -la _book
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book
