@@ -1,7 +1,24 @@
 {
-	"title": "个人blog",
-	"description": "用于文档的描述",
-    "language": "zh-hans",
-    "gitbook": "3.2.3",
-    "output": "dist"
+    "plugins":[
+         "-lunr", "-search", "search-pro",
+         "sidebar-style",
+         "splitter",
+         "chapter-fold",
+         "code",
+         "mermaid-gb3",
+         "multipart",
+         "theme-default",
+         "katex"
+    ],
+    "pluginsConfig": {
+        "sidebar-style": {
+            "title": "nooooo",
+            "author": "one-two"
+        },
+        "theme-default": {
+            "styles": {
+                "website": "styles/website.css"
+            }
+        }
+    }
 }
