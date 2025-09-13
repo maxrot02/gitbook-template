@@ -1,10 +1,6 @@
 # Summary
 
-* [首页](README.md)
- - [GitBook教程](/doc/用GitHub Pages托管GitBook生成的文档.md)
- - [gitbook使用](/doc/gitbook使用.md) 
-* 其他
- - [使用示例](/doc/常用链接.md)
+
 * [Industrial-IoT-Controller](Industrial-IoT-Controller.md)
   * [1 板子介绍](Industrial-IoT-Controller.md#section-1)
     * [1.1 核心定位](Industrial-IoT-Controller.md#section-1-1)
